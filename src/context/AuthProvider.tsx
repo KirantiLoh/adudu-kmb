@@ -9,7 +9,7 @@ export const AuthProvider = ({children}: {children: ReactNode}) => {
     const { data: session, status } = useSession({
         required: true,
         onUnauthenticated: () => {
-            signIn("google");
+            signIn("google", {callbackUrl: "/"});
         }
     })
     
